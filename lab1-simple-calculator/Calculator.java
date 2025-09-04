@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 
@@ -24,7 +25,7 @@ public class Calculator {
         if (x.equals(BigDecimal.ZERO)) {
             System.out.println("Divided by zero");
         }
-        total = total.divide(x);
+        total = total.divide(x, 4, RoundingMode.HALF_UP);
     }
 
     public void handleNumber(BigDecimal number) {
